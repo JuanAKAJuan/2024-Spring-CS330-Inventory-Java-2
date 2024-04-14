@@ -46,7 +46,14 @@ public class Armour extends Item {
      */
     public Armour()
     {
-
+        // Initialize all data members (including those inherited from Item)
+        super("");
+        this.durability = 0;
+        this.defense = 0;
+        this.material = "";
+        this.modifier = "";
+        this.modifierLevel = 0;
+        this.element = "";
     }
 
     /**
@@ -56,7 +63,13 @@ public class Armour extends Item {
      */
     public Armour(Armour src)
     {
-
+        super.name = src.name;
+        this.durability = src.durability;
+        this.defense = src.defense;
+        this.material = src.material;
+        this.modifier = src.modifier;
+        this.modifierLevel = src.modifierLevel;
+        this.element = src.element;
     }
 
     /**
@@ -191,6 +204,13 @@ public class Armour extends Item {
     @Override
     public void read(Scanner snr)
     {
+        this.name = snr.next();
+        this.material = snr.next();
+        this.durability = snr.nextInt();
+        this.defense = snr.nextInt();
+        this.modifier = snr.next();
+        this.modifierLevel = snr.nextInt();
+        this.element = snr.next();
 
     }
 
@@ -212,6 +232,7 @@ public class Armour extends Item {
     @Override
     public boolean equals(Object rhs)
     {
+        // TODO: Implement this function
         if (!(rhs instanceof Armour)) {
             return false;
         }
@@ -229,6 +250,7 @@ public class Armour extends Item {
     @Override
     public int hashCode()
     {
+        // TODO: Implement this function
         return -1;
     }
 
@@ -238,7 +260,12 @@ public class Armour extends Item {
     @Override
     public String toString()
     {
-        return "";
+        return String.format("%s: %s%n", "  Nme", this.name)
+             + String.format("%s: %d%n", "  Dur", this.durability)
+             + String.format("%s: %d%n", "  Def", this.defense)
+             + String.format("%s: %s%n", "  Mtl", this.material)
+             + String.format("%s: %s (%s %d)%n", "  Mdr", this.modifier, "Lvl", this.modifierLevel)
+             + String.format("%s: %s%n", "  Emt", this.element);
     }
 }
 

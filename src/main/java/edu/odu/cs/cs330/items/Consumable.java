@@ -38,6 +38,9 @@ public class Consumable extends Item {
      */
     public Consumable(Consumable src)
     {
+        super.name = src.name;
+        this.effect = src.effect;
+        this.uses = src.uses;
 
     }
 
@@ -105,7 +108,7 @@ public class Consumable extends Item {
     public Item clone()
     {
         // Replace the next line
-        return null;
+        return new Consumable(this);
     }
 
     /**
@@ -116,6 +119,7 @@ public class Consumable extends Item {
     @Override
     public boolean equals(Object rhs)
     {
+        // TODO: Implement this function.
         if (!(rhs instanceof Consumable)) {
             return false;
         }
@@ -136,6 +140,7 @@ public class Consumable extends Item {
     public int hashCode()
     {
         // Replace the next line
+        // TODO: Implement this function.
         return -1;
     }
 
@@ -145,6 +150,8 @@ public class Consumable extends Item {
     @Override
     public String toString()
     {
-        return "";
+        return String.format("%s: %s%n", "  Nme", this.name)
+             + String.format("%s: %s%n", "  Eft", this.effect)
+             + String.format("%s: %d%n", "  Use", this.uses);
     }
 }

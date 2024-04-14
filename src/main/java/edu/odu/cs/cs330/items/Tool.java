@@ -57,6 +57,12 @@ public class Tool extends Item {
      */
     public Tool(Tool src)
     {
+        super.name = src.name;
+        this.durability = src.durability;
+        this.speed = src.speed;
+        this.material = src.material;
+        this.modifier = src.modifier;
+        this.modifierLevel = src.modifierLevel;
 
     }
 
@@ -173,6 +179,7 @@ public class Tool extends Item {
     public void read(Scanner snr)
     {
         // Complete this method
+        // TODO: Implement this function.
     }
 
     /**
@@ -192,6 +199,7 @@ public class Tool extends Item {
     @Override
     public boolean equals(Object rhs)
     {
+        // TODO: Implement this function.
         if (!(rhs instanceof Tool)) {
             return false;
         }
@@ -220,6 +228,7 @@ public class Tool extends Item {
     @Override
     public String toString()
     {
+        // TODO: Implement this function.
         return "";
     }
 }

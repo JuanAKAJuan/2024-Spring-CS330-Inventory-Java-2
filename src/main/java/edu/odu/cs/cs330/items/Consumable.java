@@ -119,7 +119,6 @@ public class Consumable extends Item {
     @Override
     public boolean equals(Object rhs)
     {
-        // TODO: Implement this function.
         if (!(rhs instanceof Consumable)) {
             return false;
         }
@@ -127,7 +126,7 @@ public class Consumable extends Item {
         Consumable rhsItem = (Consumable) rhs;
 
         // Replace the next line
-        return false;
+        return this.name.equals(rhsItem.name) && this.effect.equals(rhsItem.effect);
     }
 
     /**
@@ -139,9 +138,8 @@ public class Consumable extends Item {
     @Override
     public int hashCode()
     {
-        // Replace the next line
-        // TODO: Implement this function.
-        return -1;
+        return this.name.hashCode()
+             + this.effect.hashCode();
     }
 
     /**

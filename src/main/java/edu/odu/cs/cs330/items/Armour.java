@@ -232,7 +232,6 @@ public class Armour extends Item {
     @Override
     public boolean equals(Object rhs)
     {
-        // TODO: Implement this function
         if (!(rhs instanceof Armour)) {
             return false;
         }
@@ -240,7 +239,7 @@ public class Armour extends Item {
         Armour rhsItem = (Armour) rhs;
 
         // Replace the next line
-        return false;
+        return this.name.equals(rhsItem.name) && this.material.equals(rhsItem.material) && this.modifier.equals(rhsItem.modifier) && this.element.equals(rhsItem.element);
     }
 
     /**
@@ -250,8 +249,10 @@ public class Armour extends Item {
     @Override
     public int hashCode()
     {
-        // TODO: Implement this function
-        return -1;
+        return this.name.hashCode()
+             + this.material.hashCode()
+             + this.modifier.hashCode()
+             + this.element.hashCode();
     }
 
     /**

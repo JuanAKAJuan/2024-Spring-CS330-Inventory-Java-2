@@ -178,8 +178,12 @@ public class Tool extends Item {
     @Override
     public void read(Scanner snr)
     {
-        // Complete this method
-        // TODO: Implement this function.
+        super.name = snr.next();
+        this.material = snr.next();
+        this.durability = snr.nextInt();
+        this.speed = snr.nextInt();
+        this.modifier = snr.next();
+        this.modifierLevel = snr.nextInt();
     }
 
     /**
@@ -199,7 +203,6 @@ public class Tool extends Item {
     @Override
     public boolean equals(Object rhs)
     {
-        // TODO: Implement this function.
         if (!(rhs instanceof Tool)) {
             return false;
         }
@@ -207,7 +210,7 @@ public class Tool extends Item {
         Tool rhsItem = (Tool) rhs;
 
         // Replace the next line
-        return false;
+        return this.name.equals(rhsItem.name) && this.material.equals(rhsItem.material) && this.modifier.equals(rhsItem.modifier);
     }
 
     /**
@@ -228,7 +231,10 @@ public class Tool extends Item {
     @Override
     public String toString()
     {
-        // TODO: Implement this function.
-        return "";
+        return String.format("%s: %s%n", "  Nme", this.name)
+             + String.format("%s: %d%n", "  Dur", this.durability)
+             + String.format("%s: %d%n", "  Spd", this.speed)
+             + String.format("%s: %s%n", "  Mtl", this.material)
+             + String.format("%s: %s (%s %d)%n", "  Mdr", this.modifier, "Lvl", this.modifierLevel);
     }
 }
